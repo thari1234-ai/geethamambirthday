@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geetha Birthday</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+/* General scrollable page */
+html, body {
+    height: auto;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Wrapper */
+#wrapper {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Flex layout for left & right */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Left & right side */
+.left, .right {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Mailbox layering */
+.boxMail .boxMail-container .card1 .imageCute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.boxMail .boxMail-container .card1 .imageCute img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boxMail .boxMail-container .card1 h3,
+.boxMail .boxMail-container .card1 .userImg {
+    position: relative;
+    z-index: 1;
+}
+
+/* Quiz button */
+#quizBtnContainer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.quizBox {
+    margin-top: 20px;
+}
+.quizBox button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="wrapper">
+    <!-- FLAGS -->
+    <div class="flag__birthday">
+        <img src="./images/1.png" width="350" class="flag__left" alt="flag">
+        <img src="./images/1.png" width="350" class="flag__right" alt="flag">
+    </div>
+
+    <div class="content">
+        <!-- LEFT -->
+        <div class="left">
+            <div class="title">
+                <h1 class="happy">
+                    <span style="--t:4s">H</span>
+                    <span style="--t:4.2s">a</span>
+                    <span style="--t:4.4s">p</span>
+                    <span style="--t:4.6s">p</span>
+                    <span style="--t:4.8s">y</span>
+                </h1>
+
+                <h1 class="birthday">
+                    <span style="--t:5s">B</span>
+                    <span style="--t:5.2s">i</span>
+                    <span style="--t:5.4s">r</span>
+                    <span style="--t:5.6s">t</span>
+                    <span style="--t:5.8s">h</span>
+                    <span style="--t:6s">d</span>
+                    <span style="--t:6.2s">a</span>
+                    <span style="--t:6.4s">y</span>
+                </h1>
+
+                <div class="hat">
+                    <img src="./images/hat.png" width="130" alt="hat">
+                </div>
+            </div>
+
+            <div class="date__of__birth"><span></span></div>
+
+            <!-- Click Here Geetha Button -->
+            <div class="btn">
+                <button id="btn__letter">
+                    <div class="mail">
+                        Click Here Geetha
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Quiz Button (hidden initially) -->
+            <div class="btn" id="quizBtnContainer" style="display:none; opacity:0; transition: opacity 1s; margin-top: 20px;">
+                <button id="btn__quiz">Take a Fun Quiz 🎉</button>
+            </div>
+
+            <!-- Quiz Box -->
+            <div class="quizBox" style="display:none;">
+                <div class="quizContent">
+                    <h2 id="quizQuestion"></h2>
+                    <div id="quizOptions"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+            <div class="box__account">
+                <div class="image">
+                    <img src="./images/geetha.jpeg" alt="profile">
+                </div>
+                <div class="name">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Dear Geetha Mam</span>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="balloon_one">
+                    <img src="./images/balloon1.png" width="100">
+                </div>
+                <div class="balloon_two">
+                    <img src="./images/balloon2.png" width="100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decorations (you can keep your existing ones) -->
+    <div class="decorate_star star1"></div>
+    <div class="decorate_star star2"></div>
+    <div class="decorate_star star3"></div>
+    <div class="decorate_star star4"></div>
+    <div class="decorate_star star5"></div>
+</div>
+
+<!-- Mail Box -->
+<div class="boxMail">
+    <i class="fa-solid fa-xmark"></i>
+    <div class="boxMail-container">
+        <div class="card1">
+            <div class="imageCute"><img src="./images/cute1.png" alt="cute image"></div>
+            <div class="userImg"><img src="./images/geetha.jpeg"></div>
+            <h4 class="username">To: Geetha Mam 💖</h4>
+            <h3>Happy Birthday</h3>
+        </div>
+        <div class="card2">
+            <div class="card2-content">
+                <h3>To You!</h3>
+                <h2>
+Happy Birthday 🥳🎂 Geetha Mam. You are always special in our hearts, and we will never forget you. You have guided us, helped us grow, and have always been genuine and kind. you are more than just a teacher—you inspire us every day. Mam,we will always strive to make you proud as your students. You are beautiful not only in appearance but also in heart. So, Happy Birthday, Mam! (“Internals podunga neriya haha” 😄) Jokes aside, thank you for being such a wonderful teacher. With love and respect, Your Tharini 💖
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+// Animate Date
+let datetxt = "7th January";
+let chars = datetxt.split("");
+let i = 0;
+let span = document.querySelector(".date__of__birth span");
+setTimeout(() => {
+    let timer = setInterval(() => {
+        if (i < chars.length) { span.textContent += chars[i++]; }
+        else { clearInterval(timer); }
+    }, 100);
+}, 2000);
+
+// Mailbox open/close
+let mail = document.querySelector(".mail");
+let boxMail = document.querySelector(".boxMail");
+let close = document.querySelector(".fa-xmark");
+mail.onclick = () => boxMail.classList.add("active");
+close.onclick = () => boxMail.classList.remove("active");
+
+// Quiz button appears after 14s
+setTimeout(() => {
+    const quizBtn = document.getElementById("quizBtnContainer");
+    quizBtn.style.display = "block";
+    setTimeout(() => { quizBtn.style.opacity = 1; }, 50);
+}, 14000);
+
+// Quiz functionality
+const quiz = [
+  {
+  question: "Q1️⃣ Who do you like the most in the class? 😌",
+  options: ["Tharini", "Tharini P", "Roll No 49", "Thariniiiii"],
+  alwaysCorrect: true
+},
+  {
+    question: "Q2️⃣ Who is your favourite student? 💖",
+    options: ["Tharini", "Tharini P", "Roll No 49", "Thariniiiii"],
+    alwaysCorrect: true
+  },
+  {
+    question: "Q3️⃣ Ungaluku Piditha batch SDNBV  2024-2027🗳️😂",
+    options: ["Yes", "AAMA", "Of course", "Definitely"],
+    alwaysCorrect: true
+  },
+  {
+    question: "Q4️⃣ Will you give us a treat? 🍫🍰",
+    options: ["Yes", "YES"],
+    alwaysCorrect: true
+  },
+  {
+    question: "Q5️⃣ When will you give the BIG gift? 🎁✨",
+    options: ["Tomorrow", "Today"],
+    alwaysCorrect: true
+  }
+];
+
+
+let current = 0;
+let score = 0;
+
+// Show quiz box on click
+document.getElementById("btn__quiz").onclick = () => {
+    document.querySelector(".quizBox").style.display = "block";
+    showQuestion();
+};
+
+function showQuestion() {
+    const q = quiz[current];
+    document.getElementById("quizQuestion").innerText = q.question;
+    const optionsDiv = document.getElementById("quizOptions");
+    optionsDiv.innerHTML = "";
+    q.options.forEach((opt, i) => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(i);
+        optionsDiv.appendChild(btn);
+    });
+}
+
+function selectAnswer(i) {
+    // If question is always correct, give point no matter what
+    if (quiz[current].alwaysCorrect) {
+        score++;
+    } 
+    // Normal questions
+    else if (i === quiz[current].answer) {
+        score++;
+    }
+
+    current++;
+
+    if (current < quiz.length) {
+        showQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    const box = document.querySelector(".quizContent");
+    let remark = "";
+
+    if(score === 5) {
+        remark = "🏆 BEST MAM EVER! Treat confirmed. Gift TODAY. No escape 😄💖";
+    } else if(score >= 3) {
+        remark = "😎 Almost perfect! Treat is loading... Konjam sikiram treat veinga ";
+    } else {
+        remark = "😂 Hmm suspicious answers… but we still love you Mam 💕";
+    }
+    
+    box.innerHTML = `
+        <h2>Your Score: ${score} / ${quiz.length}</h2>
+        <h3>${remark}</h3>
+        <button onclick="location.reload()">Play Again 😄</button>
+    `;
+}
+
+
+</script>
+
+</body>
+</html>
