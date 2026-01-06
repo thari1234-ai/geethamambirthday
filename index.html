@@ -90,6 +90,11 @@ html, body {
 </style>
 </head>
 <body>
+<audio id="bg-music" loop>
+  <source src="music/happybirthday.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 
 <div id="wrapper">
     <!-- FLAGS -->
@@ -220,7 +225,16 @@ setTimeout(() => {
 let mail = document.querySelector(".mail");
 let boxMail = document.querySelector(".boxMail");
 let close = document.querySelector(".fa-xmark");
-mail.onclick = () => boxMail.classList.add("active");
+
+const music = document.getElementById("bg-music");
+
+mail.onclick = () => {
+    boxMail.classList.add("active");
+    // Play music after first click
+    if (music.paused) {
+        music.play().catch(err => console.log("Music blocked", err));
+    }
+};
 close.onclick = () => boxMail.classList.remove("active");
 
 // Quiz button appears after 14s
